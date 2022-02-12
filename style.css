@@ -271,10 +271,16 @@ button.hero.small::before {
   height: 100%;
 }
 
+p,a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .projectSplit {
   display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 .projectSplit + .projectSplit {
   padding-top: 2rem;
@@ -379,7 +385,12 @@ button.hero.small::before {
     font-size: 1.125rem;
   }
 
-  p {
+  p, a {
     font-size: 1rem;
+    width: fit-content;
+  }
+
+  a {
+    display: block;
   }
 }
