@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Outfit:wght@500&family=Roboto+Mono:wght@400;500;700&display=swap");
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color-scheme: dark;
+  overflow: hidden;
+}
+
+body {
+  overflow-y: scroll;
+  background-color: #0f1923;
+  color: #fff;
+  font-family: "IBM plex Sans", sans-serif;
+}
+
+* {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+main.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+::select {
+  background-color: #4b7dff;
+}
+
+nav.appbar {
+  font-family: "Outfit", sans-serif;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  height: 82px;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  -webkit-backdrop-filter: blur(18px);
+          backdrop-filter: blur(18px);
+  background-color: rgba(15, 25, 35, 0.75);
+  border-bottom: solid 1px transparent;
+  transition: 175ms ease;
+}
+nav.appbar .logo {
+  width: auto;
+  height: 36px;
+}
+nav.appbar .title {
+  font-size: 1.5rem;
+}
+nav.appbar.scrolled {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+nav.appbar + section.contentBox {
+  height: calc(100vh - 82px);
+  padding: 0 3rem;
+}
+nav.appbar a {
+  display: block;
+  font-family: "Roboto Mono", monospace;
+  color: #fff;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 0.75rem;
+  opacity: 0.5;
+  transition: 175ms ease;
+}
+nav.appbar a:hover {
+  opacity: 1;
+}
+
+section.contentBox {
+  max-width: 960px;
+  width: 100%;
+  padding: 6rem 3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 8vmin;
+  color: #4b7dff;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 6vmin;
+  color: #fff;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 4vmin;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 2vmin;
+  opacity: 0.75;
+  background-color: #0f1923;
+  margin: 0;
+}
+
+p, a {
+  font-size: 1.25rem;
+  opacity: 0.65;
+}
+
+a {
+  opacity: 1;
+  color: #4b7dff;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+.title div {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+button.hero {
+  font-family: "Roboto Mono", monospace;
+  background-color: #4b7dff;
+  color: #fff;
+  font-size: 2.5vmin;
+  border: none;
+  padding: 0.875rem 2rem;
+}
+button.hero, button.hero::after {
+  transition: 175ms ease;
+}
+button.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translate(4px, 4px);
+  opacity: 0.5;
+  background-image: linear-gradient(-45deg, #4b7dff 25%, transparent 25%, transparent 50%, #4b7dff 50%, #4b7dff 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+button.hero:hover, button.hero:focus {
+  transform: translate(4px, 4px);
+}
+button.hero:hover::after, button.hero:focus::after {
+  transform: translate(0, 0);
+}
+button.hero:active {
+  background-color: #326bff;
+}
+button.hero:active::after {
+  opacity: 0;
+}
+button.hero:focus {
+  box-shadow: 0 0 0 3px rgba(75, 125, 255, 0.5);
+}
+button.hero span {
+  z-index: 3;
+}
+button.hero.small {
+  padding: 0.75rem 1.5rem 0.9rem 1.35rem;
+  font-size: 1rem;
+  background-color: #0f1923;
+}
+button.hero.small::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0f1923;
+  border: solid 2px #4b7dff;
+}
+
+.aboutMeSplit {
+  display: flex;
+  gap: 2rem;
+}
+.aboutMeSplit > div {
+  flex: 2;
+}
+.aboutMeSplit > div:last-child {
+  flex: 1;
+}
+.aboutMeSplit > div:last-child .img {
+  position: relative;
+}
+.aboutMeSplit > div:last-child .img, .aboutMeSplit > div:last-child .img img {
+  width: 100%;
+}
+.aboutMeSplit > div:last-child .img, .aboutMeSplit > div:last-child .img img {
+  transition: 175ms ease;
+}
+.aboutMeSplit > div:last-child .img img {
+  margin-bottom: -4px;
+}
+.aboutMeSplit > div:last-child .img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  transform: translate(12px, 12px);
+  opacity: 0.5;
+  background-image: linear-gradient(-45deg, #4b7dff 25%, transparent 25%, transparent 50%, #4b7dff 50%, #4b7dff 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+.aboutMeSplit > div:last-child .img:hover img {
+  filter: none;
+}
+
+.skills {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.skills > div {
+  flex: 1 1 30%;
+}
+.skills > div span {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+.skills > div > div {
+  height: 8px;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.skills > div > div div {
+  background-color: #4b7dff;
+  height: 100%;
+}
+
+.projectSplit {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.projectSplit + .projectSplit {
+  padding-top: 2rem;
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+}
+.projectSplit div {
+  flex: 2;
+  position: relative;
+}
+.projectSplit div:last-child {
+  flex: 3;
+}
+.projectSplit div:last-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translate(12px, 12px);
+  opacity: 0.5;
+  background-image: linear-gradient(-45deg, #4b7dff 25%, transparent 25%, transparent 50%, #4b7dff 50%, #4b7dff 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+.projectSplit div:last-child img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.menuButton {
+  background-color: transparent;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+
+@media screen and (max-width: 640px) {
+  nav.appbar {
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 175ms ease;
+  }
+  nav.appbar .title {
+    display: none;
+  }
+  nav.appbar svg {
+    min-width: 48px;
+    min-height: 82px;
+    max-width: 48px !important;
+    max-height: 82px !important;
+  }
+  nav.appbar.expanded {
+    position: fixed;
+    height: 100vh;
+    padding-bottom: 1rem;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  button {
+    font-size: 1rem !important;
+  }
+
+  .smC {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    max-width: 100% !important;
+  }
+
+  .aboutMeSplit, .projectSplit {
+    flex-direction: column-reverse;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
